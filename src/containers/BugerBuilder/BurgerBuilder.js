@@ -8,7 +8,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 
-const INGREDIENTS_PRICES = {
+const INGREDIENT_PRICES = {
   salad: 0.5,
   cheese: 0.4,
   meat: 1.3,
@@ -58,7 +58,7 @@ class BurgerBuilder extends Component {
     };
     updatedIngredients[type] = updatedCount;
 
-    const priceAddition = INGREDIENTS_PRICES[type];
+    const priceAddition = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
 
@@ -80,7 +80,7 @@ class BurgerBuilder extends Component {
     };
     updatedIngredients[type] = updatedCount;
 
-    const priceDeduction = INGREDIENTS_PRICES[type];
+    const priceDeduction = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice - priceDeduction;
 
