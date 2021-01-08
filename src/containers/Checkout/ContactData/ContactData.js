@@ -16,7 +16,7 @@ class ContactData extends Component {
           placeholder: 'Your Name',
         },
         value: '',
-        validate: {
+        validation: {
           required: true,
         },
         valid: false,
@@ -28,7 +28,7 @@ class ContactData extends Component {
           placeholder: 'Street',
         },
         value: '',
-        validate: {
+        validation: {
           required: true,
         },
         valid: false,
@@ -40,7 +40,7 @@ class ContactData extends Component {
           placeholder: 'POSTCODE',
         },
         value: '',
-        validate: {
+        validation: {
           required: true,
           minLength: 4,
           maxLength: 4,
@@ -54,7 +54,7 @@ class ContactData extends Component {
           placeholder: 'Country',
         },
         value: '',
-        validate: {
+        validation: {
           required: true,
         },
         valid: false,
@@ -66,7 +66,7 @@ class ContactData extends Component {
           placeholder: 'Your Email',
         },
         value: '',
-        validate: {
+        validation: {
           required: true,
         },
         valid: false,
