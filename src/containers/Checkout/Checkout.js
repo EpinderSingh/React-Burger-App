@@ -6,6 +6,8 @@ import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSumm
 import ContactData from './ContactData/ContactData';
 
 class Checkout extends Component {
+  componentDidMount() {}
+
   checkoutCancelledHandler = () => {
     this.props.history.goBack();
   };
