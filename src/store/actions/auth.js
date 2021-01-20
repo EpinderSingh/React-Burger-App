@@ -8,10 +8,11 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (authData) => {
+export const authSuccess = (token, userId) => {
   return {
     type: actionType.AUTH_SUCCESS,
-    authData,
+    idToken: token,
+    userId,
   };
 };
 
@@ -31,7 +32,7 @@ export const auth = (email, password, isSignup) => {
       returnSecureToken: true,
     };
 
-    const url =
+    let url =
       'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC7U72nF1ulF_OrSVL_rWKFlx_oI82CkwE';
     if (!isSignup) {
       url =
@@ -42,7 +43,7 @@ export const auth = (email, password, isSignup) => {
       .post(url, authData)
       .then((response) => {
         console.log(response);
-        dispatch(authSuccess(response.data));
+        dispatch(authSuccess(response.data.idToken, response.data.localId));
       })
       .catch((err) => {
         console.log(err);
